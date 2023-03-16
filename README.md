@@ -6,6 +6,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 [https://github.com/TrainingITCourses/minsait-ng_dev-23_03](https://github.com/TrainingITCourses/minsait-ng_dev-23_03)
 
+| FECHA      | HORARIO       |
+| ---------- | ------------- |
+| VIE 17 MAR | 09:30 – 13:30 |
+| MAR 21 MAR | 16:00 – 19:00 |
+| VIE 24 MAR | 09:30 – 13:30 |
+| MAR 28 MAR | 16:00 – 19:00 |
+| JUE 30 MAR | 16:00 – 19:00 |
+| VIE 31 MAR | 09:30 – 13:30 |
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
