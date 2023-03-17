@@ -1,10 +1,19 @@
-# MinsaitNgDev2303
+# Minsait NgDev 23 03
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.10.
 
 `npx -p @angular/cli@14.2.10 ng new minsait-ng_dev-23_03`
 
-[https://github.com/TrainingITCourses/minsait-ng_dev-23_03](https://github.com/TrainingITCourses/minsait-ng_dev-23_03)
+```bash
+# clone repo
+git clone https://github.com/TrainingITCourses/minsait-ng_dev-23_03.git
+# install dependencies
+cd minsait-ng_dev-23_03
+npm install
+# run app
+npm start
+# open browser at http://localhost:4200/
+```
 
 | FECHA      | HORARIO       |
 | ---------- | ------------- |
