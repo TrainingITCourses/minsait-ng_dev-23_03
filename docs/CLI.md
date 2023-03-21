@@ -32,12 +32,6 @@ ng g c layout/footer
 # move header to layout module and export it
 ```
 
----
-
-> 📋 To do....
-
----
-
 ### Styles
 
 ```bash
@@ -71,6 +65,10 @@ span {
 ### 🫵🏼 Practice
 
 - [ ] Create a copyright component private in the Layout module
+
+---
+
+> 📋 To do....
 
 ---
 
