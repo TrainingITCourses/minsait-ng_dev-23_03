@@ -1,4 +1,9 @@
 <footer>
-  <p>{{ getAuthor() }}</p>
+  <p>
+    {{ appName }} made by
+    <a target="_blank" [href]="authorUrl">
+      {{ getAuthor() }}
+    </a>
+  </p>
   <app-copy-right></app-copy-right>
 </footer>
