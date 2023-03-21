@@ -12,6 +12,26 @@ npm start
 npm run build
 ```
 
+## 1 - Components
+
+```bash
+# Create header component
+ng generate component header
+## Alternative using remote execution
+npx ng generate component header
+## Alternative using remote specific version
+npx -p @angular/cli@14.0.0 ng generate component header
+```
+
+```bash
+# Create layout module
+ng g m layout
+# Create footer component in layout module
+ng g c layout/footer
+# export footer component
+# move header to layout module and export it
+```
+
 ---
 
 > 📋 To do....
@@ -41,26 +61,6 @@ span {
   display: inline-block;
   margin-right: 0.5rem;
 }
-```
-
-## 1 - Components
-
-```bash
-# Create header component
-ng generate component header
-## Alternative using remote execution
-npx ng generate component header
-## Alternative using remote specific version
-npx -p @angular/cli@14.0.0 ng generate component header
-```
-
-```bash
-# Create layout module
-ng g m layout
-# Create footer component in layout module
-ng g c layout/footer
-# export footer component
-# move header to layout module and export it
 ```
 
 - Use `{{ expression }}` or `attribute="[expression]"` to dynamically bind data
