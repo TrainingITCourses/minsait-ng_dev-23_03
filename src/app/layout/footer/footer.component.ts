@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
   private authorName = 'Alberto Basalo';
-
+  year = new Date().getFullYear();
   constructor() {}
 
   ngOnInit(): void {}
