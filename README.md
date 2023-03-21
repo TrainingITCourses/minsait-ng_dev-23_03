@@ -1,5 +1,7 @@
 # Minsait NgDev 23 03
 
+[Repository](https://github.com/TrainingITCourses/minsait-ng_dev-23_03)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.10.
 
 `npx -p @angular/cli@14.2.10 ng new minsait-ng_dev-23_03`
