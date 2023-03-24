@@ -66,12 +66,6 @@ span {
 
 - [ ] Create a copyright component private in the Layout module
 
----
-
-> 📋 To do....
-
----
-
 ## 2 - Templates
 
 Home page with list of published activities
@@ -133,6 +127,12 @@ ng g c about
 # create a lazy module with routing pointing to register
 ng g m register --route=auth/register -m=app
 ```
+
+---
+
+> 📋 To do....
+
+---
 
 ### 🫵🏼 practice:
 

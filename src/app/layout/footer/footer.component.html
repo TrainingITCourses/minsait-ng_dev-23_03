@@ -1,9 +1,11 @@
 <footer>
-  <p>
+  <nav>
     {{ appName }} made by
     <a target="_blank" [href]="authorUrl">
       {{ getAuthor() }}
     </a>
-  </p>
+    <a routerLink="contact">📧 Get in contact</a>
+    <a routerLink="about">🧒🏼 About us</a>
+  </nav>
   <app-copy-right></app-copy-right>
 </footer>
