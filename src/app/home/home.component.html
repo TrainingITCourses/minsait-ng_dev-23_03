@@ -7,17 +7,6 @@
 <button (click)="onSortClick()">↕️ Sort order</button>
 <ul>
   <li *ngFor="let activity of activities">
-    <span>{{ activity.title }}</span>
-    <span> 📅 {{ activity.date | date : "dd-MMM-yy" }}</span>
-    <span>
-      <ng-container *ngIf="activity.price < 100; else expensive">
-        💸
-      </ng-container>
-      <ng-template #expensive> 🤑 </ng-template>
-      {{ activity.price | currency : activity.currency }}
-    </span>
-    <span [class]="activity.ageCategory">
-      {{ activity.ageCategory | titlecase }}
-    </span>
+    <app-activity-item [activity]="activity"></app-activity-item>
   </li>
 </ul>
