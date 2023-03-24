@@ -1,4 +1,10 @@
 <h3>List of activities</h3>
+<input
+  type="search"
+  placeholder="Search activity:"
+  (keyup)="onSearchChange($event)"
+/>
+<button (click)="onSortClick()">↕️ Sort order</button>
 <ul>
   <li *ngFor="let activity of activities">
     <span>{{ activity.title }}</span>
