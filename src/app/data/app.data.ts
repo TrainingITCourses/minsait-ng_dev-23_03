@@ -4,7 +4,9 @@
 //  * While not having a Rest API.
 //  * db.json contains the same data for use with json-server
 
-export const ACTIVITIES = [
+import { Activity } from './activity.type';
+
+export const ACTIVITIES: Activity[] = [
   {
     ageCategory: 'adult',
     currency: 'USD',
