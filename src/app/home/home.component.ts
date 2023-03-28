@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivitiesService } from '../core/activities.service';
 import { Activity } from '../data/activity.type';
-import { ACTIVITIES } from '../data/app.data';
 
 @Component({
   selector: 'app-home',
@@ -13,10 +13,8 @@ export class HomeComponent implements OnInit {
   private searchTerm = '';
   public activities: Activity[];
 
-  constructor() {
-    this.publishedActivities = ACTIVITIES.filter(
-      (a) => a.state === 'published'
-    );
+  constructor(activitiesService: ActivitiesService) {
+    this.publishedActivities = activitiesService.getPublishedActivities();
     this.activities = this.publishedActivities;
   }
   ngOnInit(): void {}
