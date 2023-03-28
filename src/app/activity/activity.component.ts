@@ -16,9 +16,13 @@ export class ActivityComponent implements OnInit {
     activatedRoute: ActivatedRoute,
     activitiesService: ActivitiesService
   ) {
-    this.activitySlug = activatedRoute.snapshot.paramMap.get('slug') || '';
+    this.activitySlug = this.getParamValue(activatedRoute, 'slug');
     this.activity = activitiesService.getActivityBySlug(this.activitySlug);
   }
 
   ngOnInit(): void {}
+
+  getParamValue(activatedRoute: ActivatedRoute, paramName: string): string {
+    return activatedRoute.snapshot.paramMap.get(paramName) || '';
+  }
 }
