@@ -154,7 +154,7 @@ ng g m activity --route=activities/:title -m=app
 
 ### 🫵🏼 practice
 
-- [ ] create a service for currency conversion
+- [ ] create a helper service for parameters (extract common code to a service)
 
 ## 5 - Forms
 

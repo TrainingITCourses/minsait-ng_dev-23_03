@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ActivitiesService } from '../core/activities.service';
+import { HelperService } from '../core/helper.service';
 import { Activity } from '../data/activity.type';
 
 @Component({
@@ -14,15 +15,12 @@ export class ActivityComponent implements OnInit {
 
   constructor(
     activatedRoute: ActivatedRoute,
-    activitiesService: ActivitiesService
+    activitiesService: ActivitiesService,
+    helperService: HelperService
   ) {
-    this.activitySlug = this.getParamValue(activatedRoute, 'slug');
+    this.activitySlug = helperService.getParamValue(activatedRoute, 'slug');
     this.activity = activitiesService.getActivityBySlug(this.activitySlug);
   }
 
   ngOnInit(): void {}
-
-  getParamValue(activatedRoute: ActivatedRoute, paramName: string): string {
-    return activatedRoute.snapshot.paramMap.get(paramName) || '';
-  }
 }
