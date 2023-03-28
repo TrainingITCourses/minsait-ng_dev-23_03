@@ -5,6 +5,7 @@ import { ActivityItemComponent } from './activity-item/activity-item.component';
 
 @NgModule({
   declarations: [ActivityItemComponent],
+
   imports: [CommonModule, RouterModule],
   exports: [ActivityItemComponent],
 })
