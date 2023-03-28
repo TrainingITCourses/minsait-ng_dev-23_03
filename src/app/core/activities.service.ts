@@ -12,4 +12,8 @@ export class ActivitiesService {
   getPublishedActivities() {
     return ACTIVITIES.filter((a) => a.state === 'published');
   }
+
+  getActivityBySlug(slug: string) {
+    return ACTIVITIES.find((a) => a.slug === slug);
+  }
 }
