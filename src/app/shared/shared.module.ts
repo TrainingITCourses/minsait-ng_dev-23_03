@@ -7,7 +7,6 @@ import { SmallErrorComponent } from './small-error/small-error.component';
 
 @NgModule({
   declarations: [ActivityItemComponent, SmallErrorComponent],
-
   imports: [CommonModule, RouterModule, ReactiveFormsModule],
   exports: [ActivityItemComponent, ReactiveFormsModule, SmallErrorComponent],
 })
