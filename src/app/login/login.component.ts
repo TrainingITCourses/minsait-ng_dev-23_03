@@ -16,21 +16,34 @@ export class LoginComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder) {
     this.form = formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required],
+      email: [
+        '',
+        [Validators.required, Validators.email, Validators.minLength(5)],
+      ],
+      password: [
+        '',
+        [Validators.required, Validators.minLength(4), Validators.maxLength(8)],
+      ],
     });
   }
 
   ngOnInit(): void {}
 
   onLoginClick() {
-    console.log('Login Click', this.form.value);
+    this.credentials = this.form.value;
+    console.log('Login Click', this.credentials);
   }
 
   showError(controlName: string): boolean {
     const control = this.form.controls[controlName];
     if (!control) return false;
     return control.invalid && (control.touched || control.dirty);
+  }
+
+  getErrorMessage(controlName: string): string {
+    const control = this.form.controls[controlName];
+    if (!control) return '';
+    return JSON.stringify(control.errors);
   }
 }
 
