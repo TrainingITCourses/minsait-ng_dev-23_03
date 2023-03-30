@@ -3,23 +3,22 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormsService } from '../core/forms.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css'],
 })
-export class LoginComponent implements OnInit {
+export class RegisterComponent implements OnInit {
   form: FormGroup;
 
-  credentials: Credentials = {
+  user: User = {
+    fullName: '',
     email: '',
     password: '',
   };
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private formsService: FormsService
-  ) {
+  constructor(formBuilder: FormBuilder, private formsService: FormsService) {
     this.form = formBuilder.group({
+      fullName: ['', [Validators.required, Validators.minLength(5)]],
       email: [
         '',
         [Validators.required, Validators.email, Validators.minLength(5)],
@@ -28,14 +27,18 @@ export class LoginComponent implements OnInit {
         '',
         [Validators.required, Validators.minLength(4), Validators.maxLength(8)],
       ],
+      repeatPassword: [
+        '',
+        [Validators.required, Validators.minLength(4), Validators.maxLength(8)],
+      ],
     });
   }
 
   ngOnInit(): void {}
 
-  onLoginClick() {
-    this.credentials = this.form.value;
-    console.log('Login Click', this.credentials);
+  onRegisterClick() {
+    this.user = this.form.value;
+    console.log('Register Click', this.user);
   }
 
   showError(controlName: string): boolean {
@@ -47,7 +50,8 @@ export class LoginComponent implements OnInit {
   }
 }
 
-type Credentials = {
+type User = {
+  fullName: string;
   email: string;
   password: string;
 };
