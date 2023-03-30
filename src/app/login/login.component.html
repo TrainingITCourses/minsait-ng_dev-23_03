@@ -1,1 +1,25 @@
-<p>login works!</p>
+<form [formGroup]="form">
+  <fieldset>
+    <div>
+      <label>
+        <span>E-Mail</span>
+        <span *ngIf="showError('email')">🔥</span>
+      </label>
+      <input formControlName="email" />
+    </div>
+    <div>
+      <label>
+        <span>Password</span>
+        <span *ngIf="showError('password')">🔥</span>
+      </label>
+      <input formControlName="password" />
+    </div>
+  </fieldset>
+  <button [disabled]="form.invalid" (click)="onLoginClick()">Log in</button>
+</form>
+<pre>
+  {{ form.value | json }}
+</pre>
+<pre>
+  Is InValid? {{ form.invalid }}
+</pre>
