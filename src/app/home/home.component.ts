@@ -15,10 +15,16 @@ export class HomeComponent implements OnInit {
 
   constructor(activitiesService: ActivitiesService) {
     // this.publishedActivities = activitiesService.getPublishedActivities();
-    activitiesService.getPublishedActivities$().subscribe((activities) => {
-      this.publishedActivities = activities;
-      this.activities = this.publishedActivities;
-    });
+    activitiesService.getPublishedActivities$().subscribe(
+      (activities) => {
+        this.publishedActivities = activities;
+        this.activities = this.publishedActivities;
+      },
+      (error) => {
+        this.publishedActivities = [];
+        this.activities = [];
+      }
+    );
   }
   ngOnInit(): void {}
 

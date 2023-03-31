@@ -46,7 +46,10 @@ export class RegisterComponent implements OnInit {
     console.log('Register Click', this.user);
     this.httpClient
       .post<Token>('http://localhost:3000/users', this.user)
-      .subscribe((result) => console.log('Token received', result.accessToken));
+      .subscribe(
+        (result) => console.log('Token received', result.accessToken),
+        (error) => console.warn('Captured error', error)
+      );
     console.log('Credentials Sent', this.user);
   }
 
