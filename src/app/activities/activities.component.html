@@ -1,2 +1,11 @@
 <p>Fill activity list</p>
-{{ activities | json }}
+<!-- <ul>
+  <li *ngFor="let activity of activities">
+    {{ activity | json }}
+  </li>
+</ul> -->
+<ul *ngIf="activities$ | async as activities">
+  <li *ngFor="let activity of activities">
+    {{ activity | json }}
+  </li>
+</ul>

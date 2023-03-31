@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ActivitiesService } from '../core/activities.service';
 import { Activity } from '../data/activity.type';
 
@@ -8,11 +9,15 @@ import { Activity } from '../data/activity.type';
   styleUrls: ['./activities.component.css'],
 })
 export class ActivitiesComponent implements OnInit {
-  activities: Activity[] = [];
+  //activities: Activity[]              = this.activitiesService.getAllActivities();
+  activities$: Observable<Activity[]> =
+    this.activitiesService.getAllActivities$();
 
   constructor(private activitiesService: ActivitiesService) {}
 
   ngOnInit(): void {
-    this.activities = this.activitiesService.getAllActivities();
+    // this.activitiesService.getAllActivities$().subscribe((activities) => {
+    //   this.activities = activities;
+    // });
   }
 }

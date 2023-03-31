@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HelperService } from './core/helper.service';
@@ -10,7 +11,13 @@ import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
-  imports: [BrowserModule, AppRoutingModule, LayoutModule, SharedModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    LayoutModule,
+    SharedModule,
+    HttpClientModule,
+  ],
   providers: [HelperService],
   bootstrap: [AppComponent],
 })
