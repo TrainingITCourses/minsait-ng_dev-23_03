@@ -107,6 +107,27 @@
       "id": 2,
       "password": "$2a$10$bnKCilK0B13Glr2gbCzgpej96zKyKGQFrGWuaRa10kaAoXpkXZAD6",
       "repeatedPassword": "12345"
+    },
+    {
+      "email": "mark@tesla.com",
+      "password": "$2a$10$HfYzVXC3ztEKnWHOKYRB4eVFmy/uY47TMLTLqJ9kgRcACoNiw.K8.",
+      "fullName": "Mark Musk",
+      "repeatedPassword": "1234",
+      "id": 3
+    },
+    {
+      "email": "mark@tesla.org",
+      "password": "$2a$10$9Ej3bukhePekURm/Ld5CYOp2lhKYiG6HV9v5VWjsqUFMCx.gyzwWe",
+      "fullName": "Mark Musk",
+      "repeatedPassword": "1234",
+      "id": 4
+    },
+    {
+      "email": "mark@tesla.es",
+      "password": "$2a$10$9.YV1Vulg9/7lstxQMDiTur8Op6X6Tn78sYcbrpMQfq0.iaE0c7WG",
+      "fullName": "Mark Musk",
+      "repeatedPassword": "1234",
+      "id": 5
     }
   ]
 }
