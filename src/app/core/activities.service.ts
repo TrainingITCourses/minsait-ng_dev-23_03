@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map, tap } from 'rxjs';
 import { Activity } from '../data/activity.type';
 import { ACTIVITIES } from '../data/app.data';
 
@@ -25,9 +25,16 @@ export class ActivitiesService {
   // }
 
   getPublishedActivities$(): Observable<Activity[]> {
-    return this.httpClient.get<Activity[]>(
-      'http://localhost:3000/activities?state=published'
-    );
+    // return this.httpClient.get<Activity[]>(
+    //   'http://localhost:3000/activities?state=published'
+    // );
+    return this.httpClient
+      .get<Activity[]>('http://localhost:3000/activities')
+      .pipe(
+        tap((data) => console.log('Received data', data.length)),
+        map((activities) => activities.filter((a) => a.state === 'published')),
+        tap((data) => console.log('Processed data', data.length))
+      );
   }
 
   getActivityBySlug(slug: string): Activity | undefined {
