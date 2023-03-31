@@ -1,4 +1,10 @@
-<h3>
+<!-- <h3>
   {{ activity?.title }}
 </h3>
-<pre> {{ activity | json }}</pre>
+<pre> {{ activity | json }}</pre> -->
+<div *ngIf="activity$ | async as activity">
+  <h3>
+    {{ activity?.title }}
+  </h3>
+  <pre> {{ activity | json }}</pre>
+</div>

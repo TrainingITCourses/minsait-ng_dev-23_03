@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { ActivitiesService } from '../core/activities.service';
 import { HelperService } from '../core/helper.service';
 import { Activity } from '../data/activity.type';
@@ -11,7 +12,8 @@ import { Activity } from '../data/activity.type';
   providers: [],
 })
 export class ActivityComponent implements OnInit {
-  activity: Activity | undefined;
+  // activity: Activity | undefined;
+  activity$: Observable<Activity | undefined>;
   activitySlug: string = '';
 
   constructor(
@@ -20,7 +22,11 @@ export class ActivityComponent implements OnInit {
     helperService: HelperService
   ) {
     this.activitySlug = helperService.getParamValue(activatedRoute, 'slug');
-    this.activity = activitiesService.getActivityBySlug(this.activitySlug);
+    // this.activity = activitiesService.getActivityBySlug(this.activitySlug);
+    // activitiesService
+    //   .getActivityBySlug$(this.activitySlug)
+    //   .subscribe((result) => (this.activity = result));
+    this.activity$ = activitiesService.getActivityBySlug$(this.activitySlug);
   }
 
   ngOnInit(): void {}

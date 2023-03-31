@@ -40,4 +40,21 @@ export class ActivitiesService {
   getActivityBySlug(slug: string): Activity | undefined {
     return ACTIVITIES.find((a) => a.slug === slug);
   }
+  getActivityBySlug$(slug: string): Observable<Activity | undefined> {
+    return this.httpClient
+      .get<Activity[]>('http://localhost:3000/activities?slug=' + slug)
+      .pipe(
+        map((activities: Activity[]) => {
+          if (activities.length === 0) {
+            return undefined;
+          } else return activities[0];
+        })
+      );
+  }
 }
+
+/*
+ * http://localhost:3000/activities -> [] 0,1,n
+ * http://localhost:3000/activities?q=x -> [] 0,1,n
+ * http://localhost:3000/activities/x -> {}, 404
+ */
