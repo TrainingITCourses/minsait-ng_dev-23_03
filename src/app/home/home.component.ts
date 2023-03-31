@@ -8,14 +8,17 @@ import { Activity } from '../data/activity.type';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  private publishedActivities: Activity[];
+  private publishedActivities: Activity[] = [];
   private order = 1;
   private searchTerm = '';
-  public activities: Activity[];
+  public activities: Activity[] = [];
 
   constructor(activitiesService: ActivitiesService) {
-    this.publishedActivities = activitiesService.getPublishedActivities();
-    this.activities = this.publishedActivities;
+    // this.publishedActivities = activitiesService.getPublishedActivities();
+    activitiesService.getPublishedActivities$().subscribe((activities) => {
+      this.publishedActivities = activities;
+      this.activities = this.publishedActivities;
+    });
   }
   ngOnInit(): void {}
 

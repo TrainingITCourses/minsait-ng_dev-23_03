@@ -20,8 +20,14 @@ export class ActivitiesService {
     return this.httpClient.get<Activity[]>('http://localhost:3000/activities');
   }
 
-  getPublishedActivities(): Activity[] {
-    return ACTIVITIES.filter((a) => a.state === 'published');
+  // getPublishedActivities(): Activity[] {
+  //   return ACTIVITIES.filter((a) => a.state === 'published');
+  // }
+
+  getPublishedActivities$(): Observable<Activity[]> {
+    return this.httpClient.get<Activity[]>(
+      'http://localhost:3000/activities?state=published'
+    );
   }
 
   getActivityBySlug(slug: string): Activity | undefined {
