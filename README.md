@@ -17,14 +17,14 @@ npm start
 # open browser at http://localhost:4200/
 ```
 
-| FECHA      | HORARIO       |
-| ---------- | ------------- |
-| VIE 17 MAR | 09:30 – 13:30 |
-| MAR 21 MAR | 16:00 – 19:00 |
-| VIE 24 MAR | 09:30 – 13:30 |
-| MAR 28 MAR | 16:00 – 19:00 |
-| JUE 30 MAR | 16:00 – 19:00 |
-| VIE 31 MAR | 09:30 – 13:30 |
+| FECHA      | HORARIO       | Horas |
+| ---------- | ------------- | ----- |
+| VIE 17 MAR | 09:30 – 13:30 | 4     |
+| MAR 21 MAR | 16:00 – 19:00 | 3     |
+| VIE 24 MAR | 09:30 – 13:30 | 4     |
+| MAR 28 MAR | 16:00 – 19:00 | 3     |
+| JUE 30 MAR | 16:00 – 19:00 | 3     |
+| VIE 31 MAR | 09:30 – 13:30 | 4     |
 
 ## Development server
 

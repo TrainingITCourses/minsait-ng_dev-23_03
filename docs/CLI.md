@@ -128,12 +128,6 @@ ng g c about
 ng g m register --route=auth/register -m=app
 ```
 
----
-
-> 📋 To do....
-
----
-
 ### 🫵🏼 practice:
 
 - [ ] create a lazy module with routing pointing to login
